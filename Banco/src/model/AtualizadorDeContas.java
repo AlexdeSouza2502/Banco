@@ -1,5 +1,6 @@
 package model;
 
+
 public class AtualizadorDeContas {
   private double saldoTotal = 0;
   private double selic;
@@ -8,7 +9,7 @@ public class AtualizadorDeContas {
     this.selic = selic;
   }
   
-  public void roda(Conta c) {
+  public void roda(Conta c) throws ValorInvalidoException {
     System.out.println("\nSaldo anterior: " + c.getSaldo());
     c.atualiza(selic);
     System.out.println("Saldo final: " + c.getSaldo());

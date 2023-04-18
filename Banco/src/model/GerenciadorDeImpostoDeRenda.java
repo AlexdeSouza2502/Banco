@@ -1,6 +1,6 @@
 package model;
 
-public class GerenciadorDeImpostosDeRenda {
+public class GerenciadorDeImpostoDeRenda {
     private double total;
 
     public void adiciona (Tributavel trib) {

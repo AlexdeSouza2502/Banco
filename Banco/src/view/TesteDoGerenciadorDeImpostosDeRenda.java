@@ -1,5 +1,7 @@
 package view;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import model.*;
 
 public class TesteDoGerenciadorDeImpostosDeRenda {
@@ -8,7 +10,11 @@ public class TesteDoGerenciadorDeImpostosDeRenda {
         SeguroDeVida sv = new SeguroDeVida();
         gerenciador.adiciona(sv);
         ContaCorrente cc = new ContaCorrente();
-        cc.deposita(1000);
+        try {
+            cc.deposita(1000);
+        } catch (ValorInvalidoException ex) {
+            Logger.getLogger(TesteDoGerenciadorDeImpostosDeRenda.class.getName()).log(Level.SEVERE, null, ex);
+        }
         gerenciador.adiciona(cc);
 
         System.out.println(gerenciador.getTotal());
